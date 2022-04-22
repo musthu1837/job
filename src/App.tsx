@@ -9,9 +9,9 @@ export default () =>  {
   return (
     <Wrapper>
       <Routes>
-        <Route path="/" element={<Profile />}/>
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/job" element={<Profile />}/>
+        <Route path="/job/about" element={<About />} />
+        <Route path="/job/profile" element={<Profile />} />
       </Routes> 
     </Wrapper>
   );
