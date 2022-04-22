@@ -2,7 +2,7 @@
   "name": "my-job",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://musthu1837.github.io/",
+  "homepage": "https://musthu1837.github.io/job/",
   "dependencies": {
     "-": "^0.0.1",
     "@testing-library/jest-dom": "^5.16.4",
