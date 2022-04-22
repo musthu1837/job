@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es6"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "alwaysShowRuleFailuresAsWarnings": false,
+        "ignoreDefinitionFiles": true,
+        "configFile": "./tslint.json",
+        "suppressWhileTypeErrorsPresent": false
+      }
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@actions/*": ["actions/*"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@config/*": ["config/*"],
+      "@enums/*": ["enums/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@models/*": ["models/*"],
+      "@reducers/*": ["reducers/*"],
+      "@sagas/*": ["sagas/*"],
+      "@services/*": ["services/*"],
+      "@store/*": ["store/*"],
+      "@utils/*": ["utils/*"],
+      "@validators/*": ["validators/*"],
+    }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["node_modules", "babel.config.js", "jest.config.js"]
+}
