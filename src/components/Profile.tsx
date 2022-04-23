@@ -1,5 +1,16 @@
 import React from 'react';
-
+const Actions = () => {
+    return (
+    <div style={{float: 'right'}}>
+        <span className='icon is-small'>
+            <i className="fa-solid fa-plus"></i>
+        </span>
+        {/* <span style={{marginLeft: 20}}className='icon is-small'>
+            <i className="fa-solid fa-pencil"></i>
+        </span> */}
+    </div>
+    )
+}
 const Profile = () => {
     return (
         <div style={{marginTop: 20}} className="card">
@@ -33,7 +44,7 @@ const About = () => {
     return (
         <div style={{marginTop: 20}} className="card">
             <div className='card-content'>
-                <p className="title is-4">
+                <p className="title is-4 has-text-primary">
                     About
                 </p>
                 <p className="subtitle is-6">
@@ -75,8 +86,9 @@ const Education = () => {
     return (
         <div style={{marginTop: 20}} className="card">
             <div className='card-content'>
-                <p className="title is-4">
+                <p className="title is-4 has-text-primary">
                     Education
+                    <Actions/>
                 </p>
                 <EducationItem 
                     logo=""
@@ -134,8 +146,9 @@ const Experience = () => {
     return (
         <div style={{marginTop: 20}} className="card">
             <div className='card-content'>
-                <p className="title is-4">
-                    Experience
+                <p className="title is-4 has-text-primary">
+                    Experience 
+                    <Actions/>
                 </p>
                 <ExperienceItem
                     logo=""
@@ -143,6 +156,64 @@ const Experience = () => {
                     subtitle="Assitant Professor"
                     period="2020 - Present"
                     place="Telangana, Basar."
+                />
+            </div>
+        </div>
+    )   
+}
+
+const CertificationItem = (props) => {
+    const { logo, title, subtitle, issued, credential} = props
+    return (
+        <div className='block'>
+            <div className="media">
+                <div className="media-left">
+                    <figure className="image is-48x48">
+                    <img src={logo} alt="Placeholder image"/>
+                    </figure>
+                </div>
+                <div className="media-content">
+                    <div>
+                        <p className="title is-5">{ title }</p>
+                        <p className="subtitle is-6">{ subtitle }</p>
+                    </div>
+                    <div>
+                        <p className="is-6">Issued { issued }</p>
+                        <p className="is-6">Credential { credential }</p>
+                        <button style={{marginTop: 10}} className="button is-outlined is-primary is-rounded">
+                            <span>Show credential</span>
+                            <span className="icon is-small">
+                                <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const Certifications = () => {
+    return (
+        <div style={{marginTop: 20}} className="card">
+            <div className='card-content'>
+                <p className="title is-4 has-text-primary">
+                    Certifications & Publications
+                    <Actions/>
+                </p>
+                <CertificationItem
+                    logo="https://media-exp1.licdn.com/dms/image/C4D0BAQFQr9e68bBOPQ/company-logo_200_200/0/1626275253364?e=2147483647&v=beta&t=8MdoFbBWBgGX0-2lzYyhkgSsXi-QfhSTJElBKTUPC8g"
+                    title="Modern React with Redux"
+                    subtitle="Udemy"
+                    issued="Mar 2021 - No Expiration Date"
+                    credential="sdkljksjfk-sdfksldf-sdfksjd"
+                />
+                <CertificationItem
+                    logo="https://media-exp1.licdn.com/dms/image/C4D0BAQFQr9e68bBOPQ/company-logo_200_200/0/1626275253364?e=2147483647&v=beta&t=8MdoFbBWBgGX0-2lzYyhkgSsXi-QfhSTJElBKTUPC8g"
+                    title="React Native"
+                    subtitle="Udemy"
+                    issued="Mar 2021 - No Expiration Date"
+                    credential="sdkljksjfk-sdfksldf-sdfksjd"
                 />
             </div>
         </div>
@@ -157,5 +228,6 @@ export default () => {
         <About/>
         <Education/>
         <Experience/>
+        <Certifications/>
     </div>
 }
