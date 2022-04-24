@@ -1,4 +1,6 @@
+import faker from '@faker-js/faker';
 import React from 'react';
+import Reviews from './Reviews'
 const Actions = () => {
     return (
     <div style={{float: 'right'}}>
@@ -23,17 +25,16 @@ const Profile = () => {
                 <div className="media">
                 <div className="media-left">
                     <figure className="image is-48x48">
-                    <img className='is-rounded' src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                    <img className='is-rounded' src={faker.image.avatar()} alt="Placeholder image"/>
                     </figure>
                 </div>
                 <div className="media-content">
-                    <p className="title is-4">John Smith</p>
-                    <p className="subtitle is-6">React | React Native | Angular | Spring Boot | Full Stack Engineer at Google</p>
+                    <p className="title is-4">{faker.name.findName()}</p>
+                    <p className="subtitle is-6">{faker.name.jobTitle()} | {faker.name.jobDescriptor()} | {faker.name.jobType()} | {faker.name.jobArea()}</p>
                 </div>
                 </div>
-
                 <div className="content">
-                    Hyderabad, Telangana, India.
+                    {faker.address.city()}, {faker.address.state()}, {faker.address.country()}.
                 </div>
             </div>
         </div>
@@ -48,7 +49,7 @@ const About = () => {
                     About
                 </p>
                 <p className="subtitle is-6">
-                    A full stack engineer, extremely motivated to constantly develop my skills and grow professionally. I am confident in my ability to come up with interesting ideas.
+                    {faker.lorem.paragraph()}
                 </p>
             </div>
 
@@ -64,7 +65,7 @@ const EducationItem = (props) => {
             <div className="media">
                 <div className="media-left">
                     <figure className="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                    <img src={logo} alt="Placeholder image"/>
                     </figure>
                 </div>
                 <div className="media-content">
@@ -91,21 +92,21 @@ const Education = () => {
                     <Actions/>
                 </p>
                 <EducationItem 
-                    logo=""
+                    logo={'https://media-exp1.licdn.com/dms/image/C510BAQFuWmtdDvop7g/company-logo_200_200/0/1564381235666?e=2147483647&v=beta&t=e0mJDPKRXuej0ZN_-QnnFkjdNX6kqGNNQxE1UuJB3tc'}
                     title="RGUKT Basar"
                     subtitle="Bachelor's degree, CSE"
                     period="2016 - 2020"
                     grade="8.7"
                 />
                 <EducationItem
-                    logo=""
+                    logo={'https://media-exp1.licdn.com/dms/image/C510BAQFuWmtdDvop7g/company-logo_200_200/0/1564381235666?e=2147483647&v=beta&t=e0mJDPKRXuej0ZN_-QnnFkjdNX6kqGNNQxE1UuJB3tc'}
                     title="RGUKT Basar"
                     subtitle="PUC"
                     period="2014 - 2016"
                     grade="7.54"
                 />
                 <EducationItem
-                    logo=""
+                    logo={faker.image.business()}
                     title="S.P.S.M.C High school, Vijayawada"
                     subtitle="SSC"
                     period="2004 - 2014"
@@ -124,7 +125,7 @@ const ExperienceItem = (props) => {
             <div className="media">
                 <div className="media-left">
                     <figure className="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                    <img src={logo} alt="Placeholder image"/>
                     </figure>
                 </div>
                 <div className="media-content">
@@ -151,7 +152,7 @@ const Experience = () => {
                     <Actions/>
                 </p>
                 <ExperienceItem
-                    logo=""
+                    logo={'https://media-exp1.licdn.com/dms/image/C510BAQFuWmtdDvop7g/company-logo_200_200/0/1564381235666?e=2147483647&v=beta&t=e0mJDPKRXuej0ZN_-QnnFkjdNX6kqGNNQxE1UuJB3tc'}
                     title="RGUKT Basar"
                     subtitle="Assitant Professor"
                     period="2020 - Present"
@@ -220,6 +221,19 @@ const Certifications = () => {
     )   
 }
 
+const ReviewsSection = () => {
+    return (
+        <div style={{marginTop: 20}} className="card">
+            <div className='card-content'>
+                <p className="title is-4 has-text-primary">
+                    Reviews
+                </p>
+                <Reviews/>
+            </div>
+        </div>
+    )   
+}
+
 
 export default () => {
 
@@ -229,5 +243,6 @@ export default () => {
         <Education/>
         <Experience/>
         <Certifications/>
+        <ReviewsSection/>
     </div>
 }

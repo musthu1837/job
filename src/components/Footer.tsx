@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
     return (
-    <footer className="footer is-primary" >
+    <footer style={{marginTop: 20}} className="footer is-primary card" >
         <div className="content has-text-centered">
             <p>
             <strong>Footer</strong>
