@@ -20,9 +20,12 @@ export const NavBar = () => {
 
         <div className="navbar-menu">
             <div className="navbar-start">
-                <a className="navbar-item">
-                        Jobs
-                </a>
+                <Link 
+                    to={'/job/jobs'}
+                    className="navbar-item"
+                    >
+                    Jobs
+                </Link> 
 
                 <div className="navbar-item has-dropdown is-hoverable">
                     <a className="navbar-link">
